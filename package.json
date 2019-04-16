@@ -1,0 +1,25 @@
+{
+  "name": "asyncommun",
+  "version": "1.0.0",
+  "description": "Asynchrony Communicator for software modules",
+  "main": "main.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellementul/AsynCommun.git"
+  },
+  "keywords": [
+    "asyn",
+    "message",
+    "communication",
+    "module"
+  ],
+  "author": "ellementul",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ellementul/AsynCommun/issues"
+  },
+  "homepage": "https://github.com/ellementul/AsynCommun#readme"
+}
