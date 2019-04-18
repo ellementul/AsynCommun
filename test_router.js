@@ -6,7 +6,16 @@ function DefaultModule(Inter){
 
 	Send({test: "Def", adr: 0});
 
+	var is_con = false;
 	function Receive(mess){
+		if(mess.action != "Connect" && !is_con)
+			throw new Error();
+
+		if(mess.action == "Connect"){
+			is_con = true;
+			return;
+		}
+
 		if(mess.adr)
 			throw new Error();
 
@@ -20,7 +29,17 @@ function DefaultModule(Inter){
 function ZeroModule(Inter){
 	var Send = Inter.connect(Receive);
 
+	var is_con = false;
 	function Receive(mess){
+		if(mess.action != "Connect" && !is_con)
+			throw new Error();
+
+		if(mess.action == "Connect"){
+			is_con = true;
+			return;
+		}
+
+
 		if(mess.test != "Def")
 			throw new Error();
 		Send({test: "Zero", adr: 1});
@@ -30,7 +49,17 @@ function ZeroModule(Inter){
 function OneModule(Inter){
 	var Send = Inter.connect(Receive);
 
+	var is_con = false;
 	function Receive(mess){
+		if(mess.action != "Connect" && !is_con)
+			throw new Error();
+
+		if(mess.action == "Connect"){
+			is_con = true;
+			return;
+		}
+
+
 		if(mess.test != "Zero")
 			throw new Error();
 		Send({test: "One", adr: "Two"});
@@ -40,7 +69,17 @@ function OneModule(Inter){
 function TwoModule(Inter){
 	var Send = Inter.connect(Receive);
 
+	var is_con = false;
 	function Receive(mess){
+		if(mess.action != "Connect" && !is_con)
+			throw new Error();
+
+		if(mess.action == "Connect"){
+			is_con = true;
+			return;
+		}
+
+
 		if(mess.test != "One")
 			throw new Error();
 		Send({test: "Two"});

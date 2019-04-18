@@ -6,7 +6,7 @@ function CrRoutingInters(is_log){
 			adress = "Default";
 
 		adr_arr[adress] = Inter.connect(Input);
-		adr_arr[adress]({action: "Connect", adr: adr});
+		adr_arr[adress]({action: "Connect", adress: adress});
 	};
 
 	connect.is_log = false;
