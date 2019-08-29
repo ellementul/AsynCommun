@@ -86,7 +86,7 @@ function TwoModule(Inter){
 	}
 }
 
-var Router = new CrRouter();
+var Router = new CrRouter(true, true);
 
 var Inter = new CrInter();
 var ZeroInter = new CrInter();
