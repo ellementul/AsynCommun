@@ -1,15 +1,15 @@
 const CrInter = require("./TwoFlow.js");
 
 function first_transform_func(val){
-	if(val.test != "Beg")
-		throw new Error();
-	return {test: "First"}
+	if(val.test != "End")
+		throw new Error(val.test);
+	return {test: "Second"}
 }
 
 function second_transform_func(val){
-	if(val.test != "End")
-		throw new Error();
-	return {test: "Second"}
+	if(val.test != "Beg")
+		throw new Error(val.test);
+	return {test: "First"}
 }
 
 var testedInter = new CrInter(first_transform_func, second_transform_func);
