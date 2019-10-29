@@ -10,7 +10,7 @@ module.exports = function CrInterfice(first_transform_func, second_transform_fun
 			if(second_transform_func){
 				var begFunc = outputFunc;
 				outputFunc = function(val){
-					begFunc(first_transform_func(val));
+					begFunc(second_transform_func(val));
 				}
 			}
 			return TwoConnect(outputFunc);
@@ -19,7 +19,7 @@ module.exports = function CrInterfice(first_transform_func, second_transform_fun
 			if(first_transform_func){
 				var begFunc = outputFunc;
 				outputFunc = function(val){
-					begFunc(second_transform_func(val));
+					begFunc(first_transform_func(val));
 				}
 			}
 			return OneConnect(outputFunc);
