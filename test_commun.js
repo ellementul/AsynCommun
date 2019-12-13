@@ -1,4 +1,4 @@
-const CrInter = require("./TwoFlow.js");
+const CrInter = require("./Commun.js");
 
 function first_transform_func(val){
 	if(val.test != "End")
@@ -23,7 +23,7 @@ function BegModule(Inter){
 	function Receive(val){
 		if(val.test != "Second")
 			throw new Error();
-		console.log("TwoFlow: Success!");
+		console.log("Commun: Success!");
 	}
 }
 

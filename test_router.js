@@ -1,4 +1,4 @@
-const CrInter = require("./TwoFlow.js");
+const CrInter = require("./Commun.js");
 const CrRouter = require("./Router.js");
 
 function DefaultModule(Inter){
@@ -8,10 +8,10 @@ function DefaultModule(Inter){
 
 	var is_con = false;
 	function Receive(mess){
-		if(mess.action != "Connect" && !is_con)
+		if(mess.action != "Connected" && !is_con)
 			throw new Error();
 
-		if(mess.action == "Connect"){
+		if(mess.action == "Connected"){
 			is_con = true;
 			return;
 		}
@@ -31,10 +31,10 @@ function ZeroModule(Inter){
 
 	var is_con = false;
 	function Receive(mess){
-		if(mess.action != "Connect" && !is_con)
+		if(mess.action != "Connected" && !is_con)
 			throw new Error();
 
-		if(mess.action == "Connect"){
+		if(mess.action == "Connected"){
 			is_con = true;
 			return;
 		}
@@ -51,10 +51,10 @@ function OneModule(Inter){
 
 	var is_con = false;
 	function Receive(mess){
-		if(mess.action != "Connect" && !is_con)
+		if(mess.action != "Connected" && !is_con)
 			throw new Error();
 
-		if(mess.action == "Connect"){
+		if(mess.action == "Connected"){
 			is_con = true;
 			return;
 		}
@@ -71,10 +71,10 @@ function TwoModule(Inter){
 
 	var is_con = false;
 	function Receive(mess){
-		if(mess.action != "Connect" && !is_con)
+		if(mess.action != "Connected" && !is_con)
 			throw new Error();
 
-		if(mess.action == "Connect"){
+		if(mess.action == "Connected"){
 			is_con = true;
 			return;
 		}
@@ -82,11 +82,11 @@ function TwoModule(Inter){
 
 		if(mess.test != "One")
 			throw new Error();
-		Send({test: "Two"});
+		Send({test: "Two", adr: "Default"});
 	}
 }
 
-var Router = new CrRouter(true, true);
+var Router = new CrRouter();
 
 var Inter = new CrInter();
 var ZeroInter = new CrInter();
@@ -100,7 +100,7 @@ ZeroModule(ZeroInter);
 OneModule( OneInter);
 TwoModule(TwoInter);
 
-Router(Inter);
+Router(Inter, "Default");
 Router(ZeroInter, 0);
 Router(OneInter, 1);
 Router(TwoInter, "Two");
