@@ -1,5 +1,5 @@
 module.exports = {
 	CrHoarder: require("./Hoarder.js"),
-	CrCommunicator: require("./TwoFlow.js"),
+	CrCommunicator: require("./Commun.js"),
 	CrRouter: require("./Router.js")
 };
