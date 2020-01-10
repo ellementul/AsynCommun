@@ -1,6 +1,7 @@
 module.exports = {
 	CrHoarder: require("./Hoarder.js"),
 	CrCommunicator: require("./Commun.js"),
-	CrRouter: require("./Router.js"),
+	CrConnector: require("./Connector.js"),
 	CrMultiComm: require("./MultiCommun.js"),
+	CrRouter: require("./Router.js"),
 };

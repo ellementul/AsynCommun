@@ -5,7 +5,7 @@ function CrRoutingInters(log){
 	let connect = function(Inter, adress){
 
 		adr_arr[adress] = Inter.connect(Input);
-		adr_arr[adress]({action: "Connected", adress: adress});
+		setTimeOut(() => adr_arr[adress]({action: "Connected", adress: adress}), 0);
 	};
 
 
